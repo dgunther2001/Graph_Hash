@@ -11,8 +11,10 @@ int main() {
     //myTable.printTable();
 
     Graph<int> myGraph(5);
+
+    myGraph.insertNode("Daniel", 77);
     //myGraph.mapInsert("Daniel", 23);
-    //myGraph.printMap();
+    myGraph.printGraph();
 
     return 0;
 }
