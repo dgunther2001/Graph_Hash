@@ -1,3 +1,6 @@
 [submodule "external_libs/Hash_Table"]
 	path = external_libs/Hash_Table
 	url = https://github.com/dgunther2001/Hash_Table
+[submodule "external_libs/Linked_List"]
+	path = external_libs/Linked_List
+	url = https://github.com/dgunther2001/Linked_List
