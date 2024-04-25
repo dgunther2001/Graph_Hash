@@ -46,7 +46,8 @@ public:
 
 int main() {
 
-    Graph<students> myGraph1(10, false);
+    
+    Graph<students> myGraph1(1, false);
     
     students* student1 = new students("Daniel", 23);
     students* student2 = new students("Hannah", 22);
@@ -59,8 +60,12 @@ int main() {
     myGraph1.insertNode(student3->getName(), student3);
 
     myGraph1.insertEdge("Daniel", "Hannah");
+    myGraph1.insertEdge("Daniel", "Zach");
 
     myGraph1.printGraph();
+    
+
+    std::cout << "\n";
 
     //std::cout << "Hello Graphs!\n";
     //Hash_Table<int> myTable(10);
@@ -69,25 +74,30 @@ int main() {
 
     //myTable.printTable();
 
-    /*
+    
     Graph<int> myGraph(10);
 
     myGraph.insertNode("Daniel", 77);
     myGraph.insertNode("Hannah", 65);
 
-    Graph_Node<int>* myNode = new Graph_Node("Joe", 27);
-
-    std::cout << myNode->getKey() << "\n";
-    std::cout << myNode->getObject() << "\n";
-
-
-
-    std::cout << myGraph.getGraphNode("Daniel")->getKey() << "\n";
-    std::cout << myGraph.getGraphNode("Daniel")->getObject() << "\n";
-    
-
     myGraph.insertEdge("Daniel", "Hannah");
-    */
+
+    myGraph.printGraph();
+
+    //Graph_Node<int>* myNode = new Graph_Node("Joe", 27);
+
+    
+    //std::cout << myNode->getKey() << "\n";
+    //std::cout << myNode->getObject() << "\n";
+
+
+
+    //std::cout << myGraph.getGraphNode("Daniel")->getKey() << "\n";
+    //std::cout << myGraph.getGraphNode("Daniel")->getObject() << "\n";
+
+
+
+    
     //myGraph.mapInsert("Daniel", 23);
     //myGraph.printGraph();
 
