@@ -4,3 +4,6 @@
 [submodule "external_libs/Linked_List"]
 	path = external_libs/Linked_List
 	url = https://github.com/dgunther2001/Linked_List
+[submodule "external_libs/Stack"]
+	path = external_libs/Stack
+	url = https://github.com/dgunther2001/Stack
