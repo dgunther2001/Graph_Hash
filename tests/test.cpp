@@ -4,7 +4,7 @@
 #include <stack/stack.h>
 using namespace std;
 
-class students {
+class student {
 private: 
     std::string name;
     int age;
@@ -19,24 +19,24 @@ public:
         return age;
     }
 
-    students(std::string n, int a) {
+    student(std::string n, int a) {
         name = n;
         age = a;
     }
     
     
-    bool operator==(const students& otherStudent) const {
+    bool operator==(const student& otherStudent) const {
         return (name == otherStudent.name && age == otherStudent.age);
     }
     
     
 
-    bool operator!=(const students& otherStudent) const {
+    bool operator!=(const student& otherStudent) const {
         return (name != otherStudent.name || age != otherStudent.age);
     }
 
     
-    friend ostream& operator<< (ostream& os, const students& s)
+    friend ostream& operator<< (ostream& os, const student& s)
     {
         os << s.name << ": " << s.age;
         return os;
@@ -47,12 +47,11 @@ public:
 
 int main() {
 
+    Graph<student> myGraph1(10, false);
     
-    Graph<students> myGraph1(1, false);
-    
-    students* student1 = new students("Daniel", 23);
-    students* student2 = new students("Hannah", 22);
-    students* student3 = new students("Zach", 23);
+    student* student1 = new student("Daniel", 23);
+    student* student2 = new student("Hannah", 22);
+    student* student3 = new student("Zach", 23);
 
     //cout << student3 << "\n";
 
@@ -63,8 +62,12 @@ int main() {
     myGraph1.insertEdge("Daniel", "Hannah");
     myGraph1.insertEdge("Daniel", "Zach");
 
-    myGraph1.printGraph();
+    //myGraph1.printGraph();
     
+
+    std::cout << "\n";
+
+    myGraph1.depthFirstTraversal(student1->getName());
 
     std::cout << "\n";
 
@@ -75,7 +78,7 @@ int main() {
 
     //myTable.printTable();
 
-    
+    /*
     Graph<int> myGraph(10);
 
     myGraph.insertNode("Daniel", 77);
@@ -84,6 +87,8 @@ int main() {
     myGraph.insertEdge("Daniel", "Hannah");
 
     myGraph.printGraph();
+    */
+    
 
     //Graph_Node<int>* myNode = new Graph_Node("Joe", 27);
 
@@ -102,7 +107,17 @@ int main() {
     //myGraph.mapInsert("Daniel", 23);
     //myGraph.printGraph();
 
-    cout << "\n\n\n";
+    //cout << "\n\n\n";
+
+    /*
+    Stack<student> studentStack;
+
+    studentStack.push(student1);
+    studentStack.push(student2);
+    studentStack.push(student3);
+
+    studentStack.printStack();
+    */
 
     return 0;
 }

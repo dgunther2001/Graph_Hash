@@ -1,5 +1,10 @@
+#ifndef GRAPH_HASH_H
+#define GRAPH_HASH_H
+
 #include "../external_libs/Hash_Table/include/hash_table/hash_table.h"
-#include "../external_libs/Linked_List/include/linked_list/linked_list.h"
+#include "../external_libs/Stack/include/stack/stack.h"
+//#include "../external_libs/Stack/external_libs/Linked_List/include/linked_list/linked_list.h"
+
 #include <iostream>
 #include <string>
 #include <iomanip> 
@@ -103,6 +108,34 @@ public:
 
     
 };
+
+/*
+template <typename Object>
+class StackWrapper {
+private:
+    Stack<Graph_Node<Object>*> stack;
+
+public:
+    StackWrapper() {}
+
+    StackWrapper(Stack<Graph_Node<Object>*> stack) : stack(stack) {}
+
+    void push(Graph_Node<Object>* node) {
+        stack.push(node);
+    }
+
+    Graph_Node<Object>* pop() {
+        Graph_Node<Object>** node = stack.pop();
+        Graph_Node<Object>* result = *node;
+        delete node; // delete the pointer returned by stack.pop()
+        return result;
+    }
+
+    int getSize() {
+        return stack.getSize();
+    }
+};
+*/
 
 template <typename Object>
 class Graph {
@@ -314,4 +347,57 @@ public:
         }
     }
 
+    /*
+    void depthFirstTraversal(std::string startKey) {
+        Graph_Node<Object>* startNode = myMap.hash_get_entry(startKey)->getObject();
+        StackWrapper<Object> DFSStack;
+        DFSStack.push(startNode);
+        Linked_List<Graph_Node<Object>*> visited;
+        visited.addNode(startNode);
+
+        while (DFSStack.getSize() > 0) {
+            Graph_Node<Object>* currentVert = DFSStack.pop();
+            bool inList = false;
+            // ...
+            visited.addNode(currentVert);
+            // ...
+            Graph_Node<Object>* currentNodeInAdjList = myMap.hash_get_entry(currentVert->getKey())->getObject();
+            DFSStack.push(currentNodeInAdjList);
+        }
+    }
+    */
+
+        //visited.printList();
+
+
+    /*
+        for (int i = 0; i < myMap.getSize(); i++) {
+            if (myMap.entries[i] != NULL) {
+
+                Graph_Node<Object>* currentObject = myMap.entries[i]->getObject();   
+                bool inList = false;
+                for (int j = 0; j < visited.getSize(); j++) {
+                    if (currentObject == visited.getObjAtIndex(j)) inList = true; 
+                }
+
+                if (!inList) {
+                    // Add currentObject to visited list
+                    visited.addNode(currentObject);
+
+                    DFSStack.push(currentObject);
+
+                    // placeholder print
+                    //std::cout << *(currentObject)->getObject() << "\n";
+                }
+            }
+        }
+    
+
+        //std::cout << *(DFSStack.pop().getObject());
+
+    }
+    */
+
 };
+
+#endif
